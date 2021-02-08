@@ -16,9 +16,9 @@ var query = require('samp-query');
 //@audit Settings
 
 const botChar = "/"; // Bot prefix character
-let Samp_IP = "139.99.113.204";
+let Samp_IP = "52.3.246.128";
 let Samp_Port = "7777";
-let Community_Tag ="HMG";
+let Community_Tag ="HM";
 
 let userToSubmitApplicationsTo = '808223116126846986';//Default Channel Id for User Applications
 let reportChannelID = '808223116126846986'; // Channel for the ingam reports
