@@ -43,12 +43,17 @@ var db = mysql.createConnection({
 
 //_______________________________[BOT Startup]_________________________________________________
 //@audit-ok Client Ready
-module.exports = async (client) => {
-	console.log(`[API] Logged in as ${client.user.username}`);
-	await client.user.setActivity("porn", {
-	  type: "WATHCING",//bisa LISTENING, WATCHING, PLAYING, STREAMING
-	});
-  };
+	client.on("ready", () =>{
+		console.log(`Logged in as ${client.user.tag}!`);
+		client.user.setPresence({
+			status: "idle",  //online, idle, jeung nu sejenna
+			game: {
+				name: "porn",  //pesan nu ditempokeun
+				type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
+			}
+		});
+	 });
+	
 
  // console.log('Dumbledore Woke Up from sleep!');
 	//console.log(`Logged in as ${client.user.tag}!`);
