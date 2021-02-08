@@ -52,7 +52,7 @@ client.on('ready', () => {
 	client.user.setPresence({
         status: "idle",  //Bebas
         game: {
-            name: "testing",  //Status
+            name: "porn",  //Status
             type: "WATCHING" //PLAYING: WATCHING: LISTENING: STREAMING:
         }
     });
