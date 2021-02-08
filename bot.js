@@ -16,13 +16,13 @@ var query = require('samp-query');
 //@audit Settings
 
 const botChar = "/"; // Bot prefix character
-let Samp_IP = "51.178.138.254";
+let Samp_IP = "139.99.113.204";
 let Samp_Port = 7777;
-let Community_Tag ="WG";
+let Community_Tag ="HM";
 
-let userToSubmitApplicationsTo = '710195458680684695';//Default Channel Id for User Applications
-let reportChannelID = '714432112031170562'; // Channel for the ingam reports
-let adminCmdsChannelID = '710195250911641741'; // Admin Cmds channel
+let userToSubmitApplicationsTo = '808223116126846986';//Default Channel Id for User Applications
+let reportChannelID = '808223116126846986'; // Channel for the ingam reports
+let adminCmdsChannelID = '808223116126846986'; // Admin Cmds channel
 let Bot_debug_mode = false;
 
 //_______________________________[APPLICATIONS]______________________________________________
@@ -49,9 +49,14 @@ client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 	setTimeout(getLastReportId, 1000);
 	setInterval(ReportSync, 20000);
-	
-
-});
+	client.user.setPresence({
+        status: "idle",  //Bebas
+        game: {
+            name: "testing",  //Status
+            type: "WATCHING" //PLAYING: WATCHING: LISTENING: STREAMING:
+        }
+    });
+ });
 //-----------------------------[Debug]-----------------------------------
 function toggle_debug() 
 {
