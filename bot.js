@@ -44,18 +44,22 @@ var db = mysql.createConnection({
 //_______________________________[BOT Startup]_________________________________________________
 //@audit-ok Client Ready
 client.on('ready', () => {
+	module.exports = async (client) => {
+	console.log(`[API] Logged in as ${client.user.username}`);
+	await client.user.setActivity("pesan di statusnya", {
+		  type: "PLAYING",//bisa LISTENING, WATCHING, PLAYING, STREAMING
+		});
+	  };
 
-    console.log('Dumbledore Woke Up from sleep!');
-	console.log(`Logged in as ${client.user.tag}!`);
+   // console.log('Dumbledore Woke Up from sleep!');
+	//console.log(`Logged in as ${client.user.tag}!`);
 	setTimeout(getLastReportId, 1000);
 	setInterval(ReportSync, 20000);
-	client.user.setPresence({
-        status: "idle",  //Bebas
-        game: {
-            name: "porn",  //Status
-            type: "WATCHING" //PLAYING: WATCHING: LISTENING: STREAMING:
-        }
-    });
+	//client.user.setPresence({
+        //status: "idle",  //Bebas
+        //game: {
+            //name: "porn",  //Status
+            //type: "WATCHING" //PLAYING: WATCHING: LISTENING: STREAMING:
  });
 //-----------------------------[Debug]-----------------------------------
 function toggle_debug() 
