@@ -43,16 +43,18 @@ var db = mysql.createConnection({
 
 //_______________________________[BOT Startup]_________________________________________________
 //@audit-ok Client Ready
-	client.on("ready", () =>{
-		console.log(`Logged in as ${client.user.tag}!`);
-		client.user.setActivity("Step Sister", {
-			type: "WATCHING"
-	
-		});
-		client.user.setPresence({
-				status: "dnd"
-		});
+//@audit-ok Client Ready
+client.on("ready", () =>{
+	console.log(`Logged in as ${client.user.tag}!`);
+	client.user.setPresence({
+		status: "idle",  //online, idle, jeung nu sejenna
+		game: {
+			name: "Netflix",  //pesan nu ditempokeun
+			type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
+		}
 	});
+ });
+
 
  // console.log('Dumbledore Woke Up from sleep!');
 	//console.log(`Logged in as ${client.user.tag}!`);
