@@ -45,16 +45,15 @@ var db = mysql.createConnection({
 //@audit-ok Client Ready
 	client.on("ready", () =>{
 		console.log(`Logged in as ${client.user.tag}!`);
-		client.user.setPresence({
-			status: "idle",  //online, idle, jeung nu sejenna
-			game: {
-				name: "porn",  //pesan nu ditempokeun
-				type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
-			}
-		});
-	 });
+		client.user.setActivity("Porn", {
+			type: "WATCHING"
 	
-
+		});
+		client.user.setPresence({
+				status: "dnd"
+		});
+	});
+	
  // console.log('Dumbledore Woke Up from sleep!');
 	//console.log(`Logged in as ${client.user.tag}!`);
 	//setTimeout(getLastReportId, 1000);
