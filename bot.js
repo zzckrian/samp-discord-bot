@@ -15,10 +15,10 @@ var query = require('samp-query');
 //_____________________________[BOT Configuration]_________________________________________
 //@audit Settings
 
-const botChar = "/"; // Bot prefix character
-let Samp_IP = "139.99.113.204";
+const botChar = "."; // Bot prefix character
+let Samp_IP = "52.3.246.128";
 let Samp_Port = "7777";
-let Community_Tag ="HMG";
+let Community_Tag ="HM";
 
 let userToSubmitApplicationsTo = '808223116126846986';//Default Channel Id for User Applications
 let reportChannelID = '808223116126846986'; // Channel for the ingam reports
@@ -45,7 +45,7 @@ var db = mysql.createConnection({
 //@audit-ok Client Ready
 	client.on("ready", () =>{
 		console.log(`Logged in as ${client.user.tag}!`);
-		client.user.setActivity("Porn", {
+		client.user.setActivity("Step Sister", {
 			type: "WATCHING"
 	
 		});
@@ -53,7 +53,7 @@ var db = mysql.createConnection({
 				status: "dnd"
 		});
 	});
-	
+
  // console.log('Dumbledore Woke Up from sleep!');
 	//console.log(`Logged in as ${client.user.tag}!`);
 	//setTimeout(getLastReportId, 1000);
