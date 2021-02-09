@@ -46,8 +46,8 @@ var db = mysql.createConnection({
 //@audit-ok Client Ready
 client.on('ready', () => {
 	console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client.channels.size}` + ' channels of ' + `${client.guilds.size}` + ' guilds.');
-		client.user.setStatus('online')
-		client.user.setActivity({
+		client.user.setStatus('idle')
+		client.user.setPresence({
 			game: {
 				name: 'in High Mild',
 				type: "Playing",
