@@ -49,8 +49,8 @@ client.on('ready', () => {
 		client.user.setStatus('dnd')
 		client.user.setPresence({
 			game: {
-				name: 'HighMild',
-				type: "WATCHING",
+				name: 'in High Mild',
+				type: "Playing",
 				url: "samp://52.3.246.128:7777"
 			}
 		});
