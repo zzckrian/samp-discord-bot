@@ -44,18 +44,27 @@ var db = mysql.createConnection({
 //_______________________________[BOT Startup]_________________________________________________
 //@audit-ok Client Ready
 //@audit-ok Client Ready
-client.on('ready', () => {
-	console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client.channels.size}` + ' channels of ' + `${client.guilds.size}` + ' guilds.');
-		client.user.setStatus('idle')
-		client.user.setPresence({
-			game: {
-				name: 'in High Mild',
-				type: "Playing",
-				url: "samp://52.3.246.128:7777"
-			}
-		});
+client.on("ready", () =>{
+	console.log(`Logged in as ${client.user.tag}!`);
+	client.user.setPresence({
+		status: "dnd",  //online, idle, jeung nu sejenna
+		game: {
+			name: "Netflix",  //pesan nu ditempokeun
+			type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
+		}
 	});
+ });
 
+
+ // console.log('Dumbledore Woke Up from sleep!');
+	//console.log(`Logged in as ${client.user.tag}!`);
+	//setTimeout(getLastReportId, 1000);
+	//setInterval(ReportSync, 20000);
+	//client.user.setPresence({
+        //status: "idle",  //Bebas
+        //game: {
+            //name: "porn",  //Status
+            //type: "WATCHING" //PLAYING: WATCHING: LISTENING: STREAMING:
 //-----------------------------[Debug]-----------------------------------
 function toggle_debug() 
 {
