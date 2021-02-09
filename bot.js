@@ -46,7 +46,8 @@ var db = mysql.createConnection({
 //@audit-ok Client Ready
 client.on('ready', () => {
 	console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client.channels.size}` + ' channels of ' + `${client.guilds.size}` + ' guilds.');
-		client.user.setStatus('dnd')
+		client.user.setStatus('online')
+
 		client.user.setPresence({
 			game: {
 				name: 'in High Mild',
@@ -55,11 +56,6 @@ client.on('ready', () => {
 			}
 		});
 	});
-
- // console.log('Dumbledore Woke Up from sleep!');
-	//console.log(`Logged in as ${client.user.tag}!`);
-	//setTimeout(getLastReportId, 1000);
-	//setInterval(ReportSync, 20000);
 
 //-----------------------------[Debug]-----------------------------------
 function toggle_debug() 
