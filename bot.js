@@ -45,7 +45,7 @@ var db = mysql.createConnection({
 //@audit-ok Client Ready
 //@audit-ok Client Ready
 client.on("ready", () =>{
-	bot.user.setActivity(`HighMild`, {type: 'WATCHING'})
+	client.user.setActivity(`HighMild`, {type: 'WATCHING'})
 	console.log(`Logged in as ${client.user.tag}!`);
 	client.user.setPresence({
 		status: "dnd",  //online, idle, jeung nu sejenna
