@@ -45,26 +45,19 @@ var db = mysql.createConnection({
 //@audit-ok Client Ready
 //@audit-ok Client Ready
 client.on("ready", () =>{
+	bot.user.setActivity(`HighMild`, {type: 'WATCHING'})
 	console.log(`Logged in as ${client.user.tag}!`);
 	client.user.setPresence({
 		status: "dnd",  //online, idle, jeung nu sejenna
-		game: {
-			name: "Netflix",  //pesan nu ditempokeun
-			type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
-		}
+
 	});
  });
-
 
  // console.log('Dumbledore Woke Up from sleep!');
 	//console.log(`Logged in as ${client.user.tag}!`);
 	//setTimeout(getLastReportId, 1000);
 	//setInterval(ReportSync, 20000);
-	//client.user.setPresence({
-        //status: "idle",  //Bebas
-        //game: {
-            //name: "porn",  //Status
-            //type: "WATCHING" //PLAYING: WATCHING: LISTENING: STREAMING:
+
 //-----------------------------[Debug]-----------------------------------
 function toggle_debug() 
 {
