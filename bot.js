@@ -47,7 +47,7 @@ var db = mysql.createConnection({
 client.on("ready", () =>{
 	console.log(`Logged in as ${client.user.tag}!`);
 	client.user.setPresence({
-		status: "idle",  //online, idle, jeung nu sejenna
+		status: "dnd",  //online, idle, jeung nu sejenna
 		game: {
 			name: "Netflix",  //pesan nu ditempokeun
 			type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
