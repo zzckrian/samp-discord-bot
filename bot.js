@@ -44,14 +44,17 @@ var db = mysql.createConnection({
 //_______________________________[BOT Startup]_________________________________________________
 //@audit-ok Client Ready
 //@audit-ok Client Ready
-client.on("ready", () =>{
-	client.user.setActivity(`HighMild`, {type: 'WATCHING'})
-	console.log(`Logged in as ${client.user.tag}!`);
-	client.user.setPresence({
-		status: "dnd",  //online, idle, jeung nu sejenna
-
+client.on('ready', () => {
+	console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client.channels.size}` + ' channels of ' + `${client.guilds.size}` + ' guilds.');
+		client.user.setStatus('dnd')
+		client.user.setPresence({
+			game: {
+				name: 'HighMild',
+				type: "WATCHING",
+				url: "samp://52.3.246.128:7777"
+			}
+		});
 	});
- });
 
  // console.log('Dumbledore Woke Up from sleep!');
 	//console.log(`Logged in as ${client.user.tag}!`);
