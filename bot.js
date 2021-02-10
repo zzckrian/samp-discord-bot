@@ -549,7 +549,7 @@ const helpinfo = (msg) => {
 
     const logMessage = {
         embed: {
-            title: `Discord Bot DumbleDore Help Info`,
+            title: `High Mild Stats Help Info`,
             color: embedColor,
             fields: [
 				{ name: 'Player Cmds', value: pcmds, inline: true },
@@ -576,7 +576,7 @@ client.on('message', msg => {
 
     }
 
-    if (msg.content === '/ip') 
+    if (msg.content === '\`${botChar}ip\`')
     {
 
         msg.reply(`Server IP: ${Samp_IP}`);
