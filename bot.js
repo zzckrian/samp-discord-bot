@@ -576,7 +576,7 @@ client.on('message', msg => {
 
     }
 
-    if (msg.content === '\`${botChar}ip\`')
+    if (msg.content === '.ip')
     {
 
         msg.reply(`Server IP: ${Samp_IP}`);
