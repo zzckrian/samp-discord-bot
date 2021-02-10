@@ -306,10 +306,10 @@ const applicationFormCompleted = (data) => {
 
     const logMessage = {
         embed: {
-            title: `${Community_Tag} APPLICATION SUBMISSION BY ${data.user.username}`,
+            title: `${Community_Tag} SUBMISSION BY ${data.user.username}`,
             color: embedColor,
             fields: [
-                { name: 'Application Content', value: answers, inline: true },
+                { name: 'Isi:', value: answers, inline: true },
             ],
         }
     }
