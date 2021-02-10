@@ -18,7 +18,7 @@ var query = require('samp-query');
 const botChar = "."; // Bot prefix character
 let Samp_IP = "52.3.246.128";
 let Samp_Port = "7777";
-let Community_Tag ="HM";
+let Community_Tag ="HighMild";
 
 let userToSubmitApplicationsTo = '808223116126846986';//Default Channel Id for User Applications
 let reportChannelID = '808223116126846986'; // Channel for the ingam reports
@@ -359,7 +359,7 @@ const sendUserApplyForm = (msg, appName) => {
 	} else if (!msg.guild) {
 		msg.reply("This command can only be used in a guild.");
 	} else {
-		msg.reply(`Usage : $apply [Application Type]. \n Application Open are ${Community_Tag}-TAG \n Example Usage: $apply ${Community_Tag}-TAG `);
+		msg.reply(`Usage : .apply [Application Type]. \n Application Open are ${Community_Tag}-police-recruitment \n Example Usage: .apply ${Community_Tag}-police-recruitment`);
 	}
     
     
