@@ -20,7 +20,7 @@ let Samp_IP = "52.3.246.128";
 let Samp_Port = "7777";
 let Community_Tag ="HighMild";
 
-let userToSubmitApplicationsTo = '808223116126846986';//Default Channel Id for User Applications
+let userToSubmitApplicationsTo = '808223116126846986'; '806159222701424701';//Default Channel Id for User Applications
 let reportChannelID = '808223116126846986'; // Channel for the ingam reports
 let adminCmdsChannelID = '808223116126846986'; // Admin Cmds channel
 let Bot_debug_mode = false;
