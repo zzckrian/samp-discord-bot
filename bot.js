@@ -46,7 +46,7 @@ var db = mysql.createConnection({
 //@audit-ok Client Ready
 client.on("ready", () =>{
 	console.log(`Logged in as ${client.user.tag}!`);
-	client.user.setPresence('High Mild RP'), {type: 'PLAYING'};
+	client.user.setGame('High Mild RP', {type: 'PLAYING'});
 
 });
 
