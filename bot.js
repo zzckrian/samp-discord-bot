@@ -46,15 +46,8 @@ var db = mysql.createConnection({
 //@audit-ok Client Ready
 client.on("ready", () =>{
 	console.log(`Logged in as ${client.user.tag}!`);
-	client.user.setPresence({
-		status: "dnd",  //online, idle, jeung nu sejenna
-		game: {
-			name: "Netflix",  //pesan nu ditempokeun
-			type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
-		}
-	});
- });
-
+	client.user.setGame('High Mild RP'), {type: 'PLAYING'};
+});
 
  // console.log('Dumbledore Woke Up from sleep!');
 	//console.log(`Logged in as ${client.user.tag}!`);
