@@ -9,6 +9,7 @@
 //______________________[Discord JS and SAMP Query Library]______________________________
 const Discord = require('discord.js');
 const client = new Discord.Client();
+client.user.setGame('High Mild RP'), {type: 'PLAYING'};
 
 var query = require('samp-query');
 
@@ -46,7 +47,6 @@ var db = mysql.createConnection({
 //@audit-ok Client Ready
 client.on("ready", () =>{
 	console.log(`Logged in as ${client.user.tag}!`);
-	client.user.setGame('High Mild RP'), {type: 'PLAYING'};
 });
 
  // console.log('Dumbledore Woke Up from sleep!');
