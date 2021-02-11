@@ -637,6 +637,7 @@ client.on('message', msg => {
 					setSampPort(msg, parameters.join(" "))
 					break;		 	
             case "ip":
+					msg.reply(`Server IP: ${Samp_IP}`);
 					break;
 			case "debug":
 					toggle_debug()
