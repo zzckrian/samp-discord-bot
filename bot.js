@@ -569,19 +569,13 @@ const helpinfo = (msg) => {
 client.on('message', msg => {
 
 	//------------------------------[Medthod 1 For cmds]--------------------------------
-    if (msg.content === 'dumbledore') 
+    if (msg.content === 'togi') 
     {
 
-        msg.reply(`Hi Im Dumbledore ${Community_Tag} Bot`);
+        msg.reply(`Hi Im ${Community_Tag} Bot`);
 
     }
 
-    if (msg.content === '.ip')
-    {
-
-        msg.reply(`Server IP: ${Samp_IP}`);
- 
-    }  
     //------------------------------[Medthod 2]-------------------------------------------
     if (msg.content.charAt(0) === botChar) {
 		const request = msg.content.substr(1);
