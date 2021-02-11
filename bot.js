@@ -46,8 +46,13 @@ var db = mysql.createConnection({
 //@audit-ok Client Ready
 client.on("ready", () =>{
 	console.log(`Logged in as ${client.user.tag}!`);
-	client.setPresence({ game: { name: 'High Mild RP', type: 0 } }); 
-
+	client.user.setStatus('available') // Can be 'available', 'idle', 'dnd', or 'invisible'
+    client.user.setPresence({
+        game: {
+            name: 'High Mild RP',
+            type: 0
+        }
+    });
 });
 
  // console.log('Dumbledore Woke Up from sleep!');
