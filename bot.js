@@ -200,28 +200,28 @@ function Players_List(msg)
 		}    
 		else
 		{ 
-			var str = "Server Info";
-			var value = str.concat(' IP: ',response['address'],' Players Online: ',response['online'],'.',response['maxplayers]', 'Players', response.players]); 
-			const embedColor = 0x00ff00;
 
-			const logMessage = {
+			var str = "Server Info";
+			const embedColor = 0x00ff00;
+			const listplayers = {
+			
 				embed: {
 					title: 'Server Information',
 					color: embedColor,
 					fields: [
-						{ name: 'Server IP', value: response['address'], inline: true },
-						{ name: 'Players Online', value: response['online'], inline: true },
-						{ name: 'Max Players', value: response['maxplayers'], inline: true },
+						{ name: 'Players List', value: response.players, inline: true },
 					],
 				}
 			}
       
       
-			msg.channel.send(logMessage)
+			msg.channel.send(listplayers)
+
 			if(Bot_debug_mode)
 				console.log(value)
-		}    
-	})
+		}   
+		 
+	})	
 
 }
 
@@ -720,6 +720,6 @@ client.on('message', msg => {
 
 //====================== BOT TOKEN FROM ENV VAIABLE ===================================
 
-client.login("your_token_here"); //BOT_TOKEN is the Client Secret
+client.login(process.env.BOT_TOKEN); //BOT_TOKEN is the Client Secret
 
 //=====================================================================================
