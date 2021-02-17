@@ -16,7 +16,7 @@ var query = require('samp-query');
 //@audit Settings
 
 const botChar = "."; // Bot prefix character
-let Samp_IP = "52.3.246.128";
+let Samp_IP = "51.79.212.101";
 let Samp_Port = "7777";
 let Community_Tag ="HighMild";
 
@@ -149,7 +149,59 @@ function GetPlayersOnline(msg)
 		else
 		{   
 			var str = "Server Info";
-			var value = str.concat(' IP: ',response['address'],' Players Online: ',response['online'],'.',response['maxplayers']); 
+			var value = str.concat(' IP: ',response['address'],' Players Online: ',response['online'],'.',response['maxplayers]', 'Players', response.players]); 
+			const embedColor = 0x00ff00;
+
+			const logMessage = {
+				embed: {
+					title: 'Server Information',
+					color: embedColor,
+					fields: [
+						{ name: 'Server IP', value: response['address'], inline: true },
+						{ name: 'Players Online', value: response['online'], inline: true },
+						{ name: 'Max Players', value: response['maxplayers'], inline: true },
+					],
+
+				}
+			}
+			msg.channel.send(logMessage)
+			if(Bot_debug_mode)
+				console.log(value)
+		}    
+	})
+
+}
+
+// List Players
+function Players_List(msg) 
+{
+	var options = {
+		host: "54.254.163.254",
+		port: "7777"
+	}
+	//console.log(options.host)
+	query(options, function (error, response) {
+		if(error)
+		{
+			console.log(error)
+			const embedColor = 0xff0000;
+			
+			const logMessage = {
+				embed: {
+					title: 'I wasent expecting that , Please try again later',
+					color: embedColor,
+					fields: [
+						{ name: 'Error:', value: error, inline: true },
+					],
+				}
+			}
+			msg.channel.send(logMessage)
+			
+		}    
+		else
+		{ 
+			var str = "Server Info";
+			var value = str.concat(' IP: ',response['address'],' Players Online: ',response['online'],'.',response['maxplayers]', 'Players', response.players]); 
 			const embedColor = 0x00ff00;
 
 			const logMessage = {
@@ -163,6 +215,8 @@ function GetPlayersOnline(msg)
 					],
 				}
 			}
+      
+      
 			msg.channel.send(logMessage)
 			if(Bot_debug_mode)
 				console.log(value)
@@ -170,6 +224,7 @@ function GetPlayersOnline(msg)
 	})
 
 }
+
 //@audit-info BAN Functions
 function sBAN(msg,params)
 {
@@ -441,6 +496,10 @@ const Clear_Messages = (msg,amount) => {
         });
     }
 	msg.channel.send(`No of messaes deleted ${amount}`)
+
+
+
+
 };
 const setChannel = (msg,param) => {
 	if (!msg.guild) 
@@ -561,7 +620,7 @@ client.on('message', msg => {
     if (msg.content === 'togi') 
     {
 
-        msg.reply(`Hi Im ${Community_Tag} Bot`);
+        msg.reply(`kontol`);
 
     }
 
@@ -601,6 +660,9 @@ client.on('message', msg => {
 			case "setchannel":
 				setChannel(msg, parameters.join(" "));
 				break;
+			case "pl":
+				Players_List(msg);
+				break
 			case "help":
 				helpinfo(msg);
 				break;
@@ -658,6 +720,6 @@ client.on('message', msg => {
 
 //====================== BOT TOKEN FROM ENV VAIABLE ===================================
 
-client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
+client.login("your_token_here"); //BOT_TOKEN is the Client Secret
 
 //=====================================================================================
