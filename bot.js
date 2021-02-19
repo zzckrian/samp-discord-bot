@@ -45,13 +45,24 @@ var db = mysql.createConnection({
 //@audit-ok Client Ready
 client.on("ready", () =>{
 	console.log(`Logged in as ${client.user.tag}!`);
+
+	// Create an array list containing text to displayed
+	let status_list = [
+		"High Mild RP | Development Test",
+		`${botChar}help`,
+		"54.254.163.254"
+	];
+	// Status
 	client.user.setStatus('available') // Can be 'available', 'idle', 'dnd', or 'invisible'
-    client.user.setPresence({
-        game: {
-            name: 'High Mild RP',
-            type: 0
-        }
-    });
+	setInterval(function() {
+		let status = status_list[Math.floor(Math.random() * status_list.length)]; // Generate a random number between 1 and the legth of the activity
+    	client.user.setPresence({
+        	game: {
+            	name: status,
+            	type: 0
+        	}
+		})	
+    }, 10000);
 });
 
 //-----------------------------[Debug]-----------------------------------
@@ -172,12 +183,12 @@ function GetPlayersOnline(msg)
 
 }
 
-// List Players
+// PL
 function Players_List(msg) 
 {
 	var options = {
 		host: "54.254.163.254",
-		port: "7777"
+		port: Samp_Port
 	}
 	//console.log(options.host)
 	query(options, function (error, response) {
@@ -199,29 +210,28 @@ function Players_List(msg)
 			
 		}    
 		else
-		{ 
-
+		{   
 			var str = "Server Info";
+			var value = str.concat(' IP: ',response['address'],' Players Online: ',response['online'],'.',response['maxplayers]', 'Players', response.players]); 
 			const embedColor = 0x00ff00;
-			const listplayers = {
-			
+
+			const logMessage = {
 				embed: {
 					title: 'Server Information',
 					color: embedColor,
 					fields: [
-						{ name: 'Players List', value: response.players, inline: true },
+						{ name: 'Server IP', value: response['address'], inline: true },
+						{ name: 'Players Online', value: response['online'], inline: true },
+						{ name: 'Max Players', value: response['maxplayers'], inline: true },
 					],
+
 				}
 			}
-      
-      
-			msg.channel.send(listplayers)
-
+			msg.channel.send(logMessage)
 			if(Bot_debug_mode)
 				console.log(value)
-		}   
-		 
-	})	
+		}    
+	})
 
 }
 
@@ -617,10 +627,10 @@ const helpinfo = (msg) => {
 client.on('message', msg => {
 
 	//------------------------------[Medthod 1 For cmds]--------------------------------
-    if (msg.content === 'togi') 
+    if (msg.content === '.ip2') 
     {
 
-        msg.reply(`kontol`);
+        msg.reply(`54.254.163.254`);
 
     }
 
