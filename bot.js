@@ -48,7 +48,7 @@ client.on("ready", () =>{
 
 	// Create an array list containing text to displayed
 	let status_list = [
-		"High Mild RP | Development Test",
+		"High Mild RP | Beta Test",
 		`${botChar}help`,
 		"54.254.163.254"
 	];
