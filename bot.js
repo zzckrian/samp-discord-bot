@@ -147,7 +147,7 @@ function GetPlayersOnline(msg)
 			
 			const logMessage = {
 				embed: {
-					title: 'I wasent expecting that , Please try again later',
+					title: 'I wasent expecting that, please try again later.',
 					color: embedColor,
 					fields: [
 						{ name: 'Error:', value: error, inline: true },
@@ -199,7 +199,7 @@ function Players_List(msg)
 			
 			const logMessage = {
 				embed: {
-					title: 'I wasent expecting that , Please try again later',
+					title: 'I wasent expecting that, please try again later',
 					color: embedColor,
 					fields: [
 						{ name: 'Error:', value: error, inline: true },
